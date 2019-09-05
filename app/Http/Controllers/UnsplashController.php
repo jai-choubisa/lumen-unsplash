@@ -1,22 +1,17 @@
 <?php
 declare(strict_types = 1);
 namespace App\Http\Controllers;
-session_start();
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
-class UnsplashController extends Controller
+class UnsplashController extends AuthorizeController
 {
-    /**
-    * Initialize access token in first call and save it in a session
-    */
     public function __construct(Request $request)
     {
         if(!isset($_SESSION['access_token'])){
             $_SESSION['request_url'] = $request->path();
-            $authorize = new AuthorizeController();
-            $authorize->getAccessCode($request);
+            $this->getAccessCode($request);
         }
     }
 

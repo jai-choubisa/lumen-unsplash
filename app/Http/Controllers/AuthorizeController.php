@@ -21,7 +21,7 @@ class AuthorizeController extends Controller
         $provider = new \League\OAuth2\Client\Provider\GenericProvider([
             'clientId'                => env('UNSPLASH_ACCESS_KEY'),    // The client ID assigned to you by the provider
             'clientSecret'            => env('UNSPLASH_SECRET_KEY'),   
-            'redirectUri'             => "http://127.0.0.1:8000/get-token",
+            'redirectUri'             => url("/get-token"),
             'urlAuthorize'            => 'https://unsplash.com/oauth/authorize',
             'urlAccessToken'          => 'https://unsplash.com/oauth/token',
             'urlResourceOwnerDetails' => 'https://api.unsplash.com/me'
