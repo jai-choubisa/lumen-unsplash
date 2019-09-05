@@ -8,7 +8,8 @@ Laravel Lumen is a stunningly fast PHP micro-framework for building web applicat
 ## Installation
 1. Clone the repo and cd into it
 2. composer install
-3. php -S 127.0.0.1:8000 -t public
+3. rename .env.example to .env and write values of UNSPLASH_ACCESS_KEY and UNSPLASH_SECRET_KEY
+4. php -S 127.0.0.1:8000 -t public
 
 ## Code Files
 1. /routes/web.php - route file showing routes
